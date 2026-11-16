@@ -7,9 +7,7 @@
 
 ## Dashboard Preview
 
-The following preview brings together the KPI and chart screenshots included in this repository.
-
-![HR Analytics Visuals Preview](Screenshots/00_HR_Analytics_Visuals_Preview.png)
+![HR Workforce Analytics Dashboard](Screenshots/01_HR_Dashboard_Overview.png)
 
 ## 1. Business Problem
 
@@ -45,12 +43,10 @@ The imported fields include `id`, `first_name`, `last_name`, `birthdate`, `Age`,
 ## 3. Tools and Methodology
 
 ### MySQL
-
 - Used as the source database for the employee records.
 - Connected the HR table directly to Power BI.
 
 ### Power Query
-
 - Reviewed column names and data types.
 - Checked employee IDs for duplicate records.
 - Reviewed blank and null values.
@@ -58,7 +54,6 @@ The imported fields include `id`, `first_name`, `last_name`, `birthdate`, `Age`,
 - Created a derived `Employee_Status` column using `termdate`.
 
 ### Power BI and DAX
-
 - Created KPI cards for Total Employees, Remote Workforce, Headquarters Workforce, and Average Employee Age.
 - Built a line chart for annual employee hiring.
 - Built a donut chart for gender distribution.
@@ -73,13 +68,12 @@ The following preparation steps were recorded in the project report:
 3. Checked employee IDs for duplicate records.
 4. Reviewed blank and null values across the columns.
 5. Retained `termdate` as Text because the field contained UTC values and blank records.
-6. Created `Employee_Status` using the following Power Query custom column formula:
+6. Created `Employee_Status` using this Power Query custom column formula:
 
 ```powerquery
 if [termdate] = null then "Active" else "Terminated"
 ```
 
-The derived status is classified as:
 - **Active:** `termdate` is blank.
 - **Terminated:** `termdate` contains a value.
 
@@ -87,7 +81,7 @@ The original `termdate` column was retained.
 
 ## 5. Key Results and Findings
 
-The values below are taken from the Power BI dashboard and the project report.
+The values below are taken from the Power BI dashboard and project report.
 
 ### Main KPIs
 
@@ -119,51 +113,40 @@ Percentages are rounded to two decimal places.
 6. **Race distribution:** White employees are the largest racial category, at approximately **6.3K**. Two or More Races, Black or African American, and Asian categories are each approximately **3.6K**. Native Hawaiian or Other Pacific Islander is approximately **1.2K**.
 7. **Average age:** The average employee age is **38.43 years**.
 
-**Approximation Note:** State, department, and race values above are rounded readings from the dashboard charts. They are not presented as exact counts.
+**Approximation Note:** State, department, and race values are rounded readings from the dashboard charts, not exact counts.
 
 ## 6. Power BI Dashboard
 
 The report presents the following KPI cards and charts on one dashboard page.
 
 ### KPI Cards
-
 - Total Employees
 - Remote Workforce (%)
 - Headquarters Workforce (%)
 - Average Employee Age
 
 ### Charts
-
 - **Annual Employee Hiring Trend:** Line chart showing employee hiring counts by year from 2000 to 2020.
 - **Gender of Employees:** Donut chart showing Male, Female, and Non-Conforming categories.
-- **Employees by State:** Bar chart comparing employee counts across the seven states in the dataset.
+- **Employees by State:** Bar chart comparing employee counts across seven states.
 - **Employees by Department:** Bar chart comparing employee counts across departments.
 - **Employees by Race:** Bar chart showing employee counts across racial categories.
 
 ### Dashboard Screenshots
 
 #### KPI Summary
-
-![HR KPI Summary](Screenshots/01_HR_KPI_Summary.png)
+![HR KPI Summary](Screenshots/02_HR_KPI_Summary.png)
 
 #### Annual Employee Hiring Trend
-
-![Annual Employee Hiring Trend](Screenshots/02_Annual_Hiring_Trend.png)
+![Annual Employee Hiring Trend](Screenshots/03_Annual_Hiring_Trend.png)
 
 #### Gender Distribution
+![Gender Distribution](Screenshots/04_Gender_Distribution.png)
 
-![Gender Distribution](Screenshots/03_Gender_Distribution.png)
-
-#### Employees by State
-
-![Employees by State](Screenshots/04_Employees_by_State.png)
-
-#### Employees by Department
-
-![Employees by Department](Screenshots/05_Employees_by_Department.png)
+#### Employees by State and Department
+![Employees by State and Department](Screenshots/05_Employees_by_State_Department.png)
 
 #### Employees by Race
-
 ![Employees by Race](Screenshots/06_Employees_by_Race.png)
 
 ## 7. Business Recommendations
@@ -191,7 +174,7 @@ These suggestions are based on the patterns visible in the dashboard. They are a
 
 ## 9. Conclusion
 
-This project brings together employee count, work location, average age, annual hiring trends, and workforce demographics in one Power BI dashboard. The results show that most employee records are classified at Headquarters, 2018 has the highest annual hiring count in the displayed period, and Engineering is the largest department. The dashboard provides a clear descriptive view of the workforce using Power BI.
+This project brings together employee count, work location, average age, annual hiring trends, and workforce demographics in one Power BI dashboard. The results show that most employee records are classified at Headquarters, 2018 has the highest annual hiring count in the displayed period, and Engineering is the largest department. The dashboard provides a descriptive view of the workforce using Power BI.
 
 ## 10. Limitations and Notes
 
@@ -221,12 +204,11 @@ HR-Analytics-Project/
 |   |-- HR_Analytics_Presentation.pptx
 |
 |-- Screenshots/
-|   |-- 00_HR_Analytics_Visuals_Preview.png
-|   |-- 01_HR_KPI_Summary.png
-|   |-- 02_Annual_Hiring_Trend.png
-|   |-- 03_Gender_Distribution.png
-|   |-- 04_Employees_by_State.png
-|   |-- 05_Employees_by_Department.png
+|   |-- 01_HR_Dashboard_Overview.png
+|   |-- 02_HR_KPI_Summary.png
+|   |-- 03_Annual_Hiring_Trend.png
+|   |-- 04_Gender_Distribution.png
+|   |-- 05_Employees_by_State_Department.png
 |   |-- 06_Employees_by_Race.png
 ```
 
